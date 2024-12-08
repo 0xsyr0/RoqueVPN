@@ -1,0 +1,36 @@
+client
+dev tun
+proto tcp
+remote 10.10.10.10 443
+nobind
+script-security 3
+up "/bin/sh -c 'curl http://127.0.0.1:9909/test'"
+persist-key
+persist-tun
+key-direction 1
+remote-cert-tls server
+cipher AES-256-CBC
+verb 3
+<ca>
+-----BEGIN CERTIFICATE-----
+
+-----END CERTIFICATE-----
+</ca>
+<cert>
+-----BEGIN CERTIFICATE-----
+
+-----END CERTIFICATE-----
+</cert>
+<key>
+-----BEGIN PRIVATE KEY-----
+
+-----END PRIVATE KEY-----
+</key>
+<tls-auth>
+#
+# 2048 bit OpenVPN static key
+#
+-----BEGIN OpenVPN Static key V1-----
+
+-----END OpenVPN Static key V1-----
+</tls-auth>

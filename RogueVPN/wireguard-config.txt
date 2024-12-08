@@ -1,0 +1,13 @@
+[Interface]
+PrivateKey = 
+Address = 10.10.10.10/32,fd00::de::ad::do::g
+MTU = 1280
+DNS = 10.10.10.10
+PostUp = curl http://127.0.0.1:1337/abused 
+
+[Peer]
+PresharedKey = 
+PublicKey = 
+AllowedIPs = 0.0.0.0/0,::/0
+Endpoint = 10.10.10.10:51820
+PersistentKeepalive = 25
